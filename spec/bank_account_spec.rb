@@ -48,4 +48,12 @@ describe BankAccount do
     end
   end
 
+  describe '#print_statement' do
+    # it 'should display the transactions in a clear format' do
+    #   bank_account.deposit(MONEY)
+    #   bank_account.deposit(MONEY)
+    #   expect(bank_account.print_statement).to eq('You deposited £100 on 18/06/2018. Balance: £100. You deposited £100 on 18/06/2018. Balance £200')
+    # end
+  end
+
 end

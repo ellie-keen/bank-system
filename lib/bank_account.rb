@@ -9,13 +9,12 @@ class BankAccount
 
   def deposit(amount)
     raise 'Enter an amount more than 0' if negative?(amount)
-    @balance += amount
+    add_to_balance(amount)
     submit_transaction(amount)
   end
 
   def withdraw(amount)
-    raise 'Insufficient funds' if insufficient_funds?(amount)
-    @balance -= amount
+    remove_from_balance(amount)
     submit_transaction(amount)
   end
 
@@ -31,6 +30,16 @@ class BankAccount
 
   def submit_transaction(amount)
     @transactions << "#{amount}," + " #{Time.now.strftime("%d/%m/%Y")}," + " #{@balance}"
+  end
+
+  def add_to_balance(amount)
+    raise 'Enter an amount more than 0' if negative?(amount)
+    @balance += amount
+  end
+
+  def remove_from_balance(amount)
+    raise 'Insufficient funds' if insufficient_funds?(amount)
+    @balance -= amount
   end
 
 end
