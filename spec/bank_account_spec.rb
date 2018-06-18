@@ -13,7 +13,19 @@ describe BankAccount do
     end
 
     it 'should raise an error if depositing a negative number' do
-      expect { bank_account.deposit(-100) }.to raise_error("Enter an amount more than 0")
+      expect { bank_account.deposit(-100) }.to raise_error('Enter an amount more than 0')
     end
   end
+
+  describe '#withdraw' do
+    it 'should remove the amount from the balance' do
+      bank_account.deposit(100)
+      expect { bank_account.withdraw(100) }.to change { bank_account.balance }.by(-100)
+    end
+
+    it 'should raise an error if the amount withdrawn is more than the balance' do
+      expect { bank_account.withdraw(100) }.to raise_error('Insufficient funds')
+    end
+  end
+
 end
