@@ -22,7 +22,12 @@ describe BankAccount do
 
     it 'should add the amount to the transactions array' do
       bank_account.deposit(100)
-      expect(bank_account.transactions).to eq([100])
+      expect(bank_account.transactions).to eq(['100, 18/06/2018'])
+    end
+
+    it 'should include the date deposited within the transaction' do
+      bank_account.deposit(100)
+      expect(bank_account.transactions).to eq(['100, 18/06/2018'])
     end
   end
 
@@ -36,7 +41,4 @@ describe BankAccount do
       expect { bank_account.withdraw(100) }.to raise_error('Insufficient funds')
     end
   end
-
-
-
 end
