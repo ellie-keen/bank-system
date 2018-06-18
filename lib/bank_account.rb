@@ -15,6 +15,7 @@ class BankAccount
   def withdraw(amount)
     raise 'Insufficient funds' if insufficient_funds?(amount)
     @balance -= amount
+    submit_transaction(amount)
   end
 
   private

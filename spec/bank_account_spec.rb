@@ -33,9 +33,15 @@ describe BankAccount do
   end
 
   describe '#transactions' do
+
     it 'should include the amount, date and balance in transactions array' do
-      bank_account.deposit(100)
       expect(bank_account.transactions).to eq(['100, 18/06/2018, 100'])
     end
+
+    it 'should hold multiple transactions within the array' do
+      bank_account.withdraw(50)
+      expect(bank_account.transactions).to eq(['100, 18/06/2018, 100','50, 18/06/2018, 50'])
+    end
   end
+
 end
