@@ -1,8 +1,9 @@
 class BankAccount
+  DEFAULT_BALANCE = 0
   attr_reader :balance, :transactions
 
   def initialize
-    @balance = 0
+    @balance = DEFAULT_BALANCE
     @transactions = []
   end
 
@@ -21,7 +22,7 @@ class BankAccount
   private
 
   def negative?(amount)
-    amount < 0
+    amount < DEFAULT_BALANCE
   end
 
   def insufficient_funds?(amount)
