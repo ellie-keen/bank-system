@@ -28,7 +28,7 @@ class BankAccount
   end
 
   def submit_transaction(amount)
-    @transactions << "#{amount}," + " #{Time.now.strftime("%d/%m/%Y")}"
+    @transactions << "#{amount}," + " #{Time.now.strftime("%d/%m/%Y")}," + " #{@balance}"
   end
 
 end
