@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-ruby ‘2.4.1’
+source "https://rubygems.org"
+ruby "2.5.1"
 
 group :test do
 gem 'rspec'
