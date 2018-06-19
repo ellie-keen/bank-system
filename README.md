@@ -1,8 +1,8 @@
 ## Bank Tech Test
 
-The program is written in Ruby using **test driven development**, following **DRY** and **SOLID** principles. 
+The program is written in Ruby using **Test Driven Development**, following **DRY** and **SOLID** principles.
 
-The requirements are to be able to deposit and withdraw money from a bank account and display a bank statement with the correct amount and dates. 
+The requirements are to be able to deposit and withdraw money from a bank account and display a bank statement with the correct amount and dates.
 
 #### User Stories
 
@@ -15,15 +15,15 @@ As a customer,
 So I can save my money,
 I should be able to deposit money into my bank account.
 
-As a customer, 
+As a customer,
 So I know how much money I have available,
 I should be able to view my bank balance.
 
-As a customer, 
+As a customer,
 So I can check when I made my transactions,
 I should be able to view the date money goes in and out of my account.
 
-As a customer, 
+As a customer,
 So I can keep track of my transaction history,
 I should be able to view my full bank statement.
 ```
@@ -66,18 +66,18 @@ date || credit || debit || balance
 
 ### Code Quality and Testing
 
-This program has 100% test coverage as shown using the (Simplecov Gem)[https://rubygems.org/gems/simplecov/]
+This program has 100% test coverage as shown using the [Simplecov Gem](https://rubygems.org/gems/simplecov/)
 
-![Alt text](https://github.com/ellie-keen/bank-tech-test/public/coverage.png "coverage")
+![Alt text](https://github.com/ellie-keen/bank-tech-test/blob/master/public/coverage.png "coverage")
 
-I used (Rubocop)[https://rubygems.org/gems/rubocop/] to check that my code follows Ruby conventions and readability.
+I used [Rubocop](https://rubygems.org/gems/rubocop/) to check that my code follows Ruby conventions and readability.
 
-Testing was written using  (Rspec)[https://rubygems.org/gems/rspec/]
+Testing was written using  [Rspec](https://rubygems.org/gems/rspec/)
 
-![Alt text](https://github.com/ellie-keen/bank-tech-test/public/rspec.png "rspec")
+![Alt text](https://github.com/ellie-keen/bank-tech-test/blob/master/public/rspec.png "rspec")
 
 ##### Run Rspec tests
 
-* ```bash
-  rspec
-  ```
+```
+rspec
+```
