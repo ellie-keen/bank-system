@@ -8,7 +8,6 @@ class BankAccount
   end
 
   def deposit(amount)
-    raise 'Enter an amount more than 0' if negative?(amount)
     add_to_balance(amount)
     submit_transaction(amount)
   end
@@ -29,7 +28,7 @@ class BankAccount
   end
 
   def submit_transaction(amount)
-    @transactions << "#{amount}," + " #{Time.now.strftime("%d/%m/%Y")}," + " #{@balance}"
+    @transactions << "#{amount}," + " #{Date.today}," + " #{@balance}"
   end
 
   def add_to_balance(amount)

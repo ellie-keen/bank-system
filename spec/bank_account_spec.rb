@@ -4,6 +4,10 @@ describe BankAccount do
   MONEY = 100
   subject(:bank_account) { BankAccount.new }
 
+  before(:each) do
+    allow(Date).to receive(:today).and_return Date.new(2018,06,19)
+  end
+
   it 'is initialized with a balance of 0' do
     expect(bank_account.balance).to eq(BankAccount::DEFAULT_BALANCE)
   end
@@ -39,21 +43,12 @@ describe BankAccount do
     end
 
     it 'should include the amount, date and balance in transactions array' do
-      expect(bank_account.transactions).to eq(['100, 18/06/2018, 100'])
+      expect(bank_account.transactions).to eq(['100, 2018-06-19, 100'])
     end
 
     it 'should hold multiple transactions within the array' do
       bank_account.withdraw(MONEY)
-      expect(bank_account.transactions).to eq(['100, 18/06/2018, 100','100, 18/06/2018, 0'])
+      expect(bank_account.transactions).to eq(['100, 2018-06-19, 100','100, 2018-06-19, 0'])
     end
   end
-
-  describe '#print_statement' do
-    # it 'should display the transactions in a clear format' do
-    #   bank_account.deposit(MONEY)
-    #   bank_account.deposit(MONEY)
-    #   expect(bank_account.print_statement).to eq('You deposited £100 on 18/06/2018. Balance: £100. You deposited £100 on 18/06/2018. Balance £200')
-    # end
-  end
-
 end
