@@ -72,6 +72,8 @@ This program has 100% test coverage as shown using the [Simplecov Gem](https://r
 
 I used [Rubocop](https://rubygems.org/gems/rubocop/) to check that my code follows Ruby conventions and readability.
 
+When it came to mocking time in my tests, I decided to use the [Timecop](https://rubygems.org/gems/timecop/) gem.
+
 Testing was written using  [Rspec](https://rubygems.org/gems/rspec/)
 
 ![Alt text](https://github.com/ellie-keen/bank-tech-test/blob/master/public/rspec.png "rspec")
