@@ -12,7 +12,7 @@ describe 'Feature test' do
     end
 
     it 'should have correct balance after deposit and withdrawal' do
-      expect(bank_account.balance).to eq 50
+      expect(bank_account.balance).to eq(50)
     end
 
     it 'should raise error if withdrawing more money than is available' do
@@ -25,17 +25,13 @@ describe 'Feature test' do
   end
 
   describe 'BankStatement' do
-    date = ''
-
-    before(:each) do
+    it 'should print 3 items in reverse chronological order' do
       date = Time.now.strftime('%d/%m/%Y')
       Timecop.freeze(date)
       bank_account.deposit(10)
       bank_account.deposit(30)
       bank_account.withdraw(5)
-    end
 
-    it 'should print 3 items in reverse chronological order' do
       expect(bank_statement.print_statement(bank_account)).to eq(
         "date || credit || debit || balance\n" \
         "#{date} || || 5.00 || 35.00\n" \
