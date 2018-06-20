@@ -1,3 +1,5 @@
+require_relative 'transaction'
+
 class BankAccount
   DEFAULT_BALANCE = 0
   attr_reader :balance, :transactions
@@ -9,12 +11,12 @@ class BankAccount
 
   def deposit(amount)
     add_to_balance(amount)
-    submit_transaction(amount)
+    submit_transaction(amount, 'deposit')
   end
 
   def withdraw(amount)
     remove_from_balance(amount)
-    submit_transaction(amount)
+    submit_transaction(amount, 'withdraw')
   end
 
   private
@@ -27,8 +29,8 @@ class BankAccount
     amount > @balance
   end
 
-  def submit_transaction(amount)
-    @transactions << "#{amount}," + " #{Date.today}," + " #{@balance}"
+  def submit_transaction(amount, type)
+    @transactions << Transaction.new(amount, @balance, type)
   end
 
   def add_to_balance(amount)
@@ -40,5 +42,4 @@ class BankAccount
     raise 'Insufficient funds' if insufficient_funds?(amount)
     @balance -= amount
   end
-
 end
