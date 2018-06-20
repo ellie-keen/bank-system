@@ -1,4 +1,5 @@
 require 'transaction'
+require 'timecop'
 
 describe Transaction do
   subject(:transaction) { Transaction.new(100, 100, 'deposit') }
@@ -8,7 +9,9 @@ describe Transaction do
   end
 
   it 'should be initialized with a date' do
-    expect(transaction.date).to eq('19/06/2018')
+    date = Time.now.strftime('%d/%m/%Y')
+    Timecop.freeze(date)
+    expect(transaction.date).to eq(date)
   end
 
   it 'should be initialized with a balance' do
