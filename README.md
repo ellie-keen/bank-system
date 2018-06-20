@@ -83,3 +83,7 @@ Testing was written using  [Rspec](https://rubygems.org/gems/rspec/)
 ```
 rspec
 ```
+
+### My Approach
+
+To complete this task, I first split up [the brief](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md) into User Stories. This gave me a clear idea about each feature I needed to implement so that I didn't leave anything uncovered. I then used Domain Modelling to clearly seperate those features out into Objects and Messages. I started diagramming to see how the structure of my program would look to help me get started. I had 3 clearly defined objects - BankAccount, Transaction and BankStatement and some clear methods. I used Test Driven Development so that my application was built robustly and used the Red, Green, Refactor approach.  

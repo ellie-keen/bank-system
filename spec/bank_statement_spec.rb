@@ -2,6 +2,7 @@ require 'bank_statement'
 require 'bank_account'
 
 describe BankStatement do
+  MONEY = 100
   subject(:bank_statement) { BankStatement.new }
   let(:bank_account) { BankAccount.new }
   date = ''
@@ -9,7 +10,7 @@ describe BankStatement do
   before(:each) do
     date = Time.now.strftime('%d/%m/%Y')
     Timecop.freeze(date)
-    bank_account.deposit(100)
+    bank_account.deposit(MONEY)
   end
 
   describe '#print_statement' do
