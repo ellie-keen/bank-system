@@ -22,7 +22,7 @@ class BankAccount
   private
 
   def negative?(amount)
-    amount < DEFAULT_BALANCE
+    amount < 0
   end
 
   def insufficient_funds?(amount)

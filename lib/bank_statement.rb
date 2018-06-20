@@ -9,7 +9,7 @@ class BankStatement
       balance = " #{'%.2f' % transaction.balance}\n"
       statement += date + credit_or_debit + balance
     end
-    statement
+    print statement
   end
 
   private
